@@ -38,11 +38,16 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
 
         private static GameState lastGameState;
         private static bool lookForTeleporting;
+        private static bool isPaused = false;
 
         public static void OnPreRender(GameManager gameManager, StringBuilder infoBuilder) {
             string currentScene = gameManager.sceneName;
             string nextScene = gameManager.nextSceneName;
             GameState gameState = gameManager.gameState;
+
+            if (Input.GetKeyDown(KeyCode.P)) {
+                isPaused = !isPaused;
+            }
 
             if (!timeStart && (nextScene.Equals("Tutorial_01", StringComparison.OrdinalIgnoreCase) && gameState == GameState.ENTERING_LEVEL ||
                                nextScene is "GG_Vengefly_V" or "GG_Boss_Door_Entrance" or "GG_Entrance_Cutscene" ||
@@ -52,7 +57,7 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
             }
 
             if (timeStart && !timeEnd && (nextScene.StartsWith("Cinematic_Ending", StringComparison.OrdinalIgnoreCase) ||
-                                          nextScene == "GG_End_Sequence")) {
+                                          nextScene == "GG_End_Sequence") || AutoSplit.SplitLastSplit) {
                 timeEnd = true;
             }
 
@@ -83,7 +88,8 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
                     (loadingMenu || uiState != UIState.PAUSED && (!string.IsNullOrEmpty(nextScene) || currentScene == "_test_charms")) &&
                     nextScene != currentScene
                     || minorVersion < 3 && (bool)TilemapDirtyFieldInfo.GetValue(gameManager)
-                    || ConfigManager.PauseTimer;
+                    || ConfigManager.PauseTimer
+                    || isPaused;
             } catch {
                 // ignore
             }

@@ -15,9 +15,12 @@ ShowKnightInfo = true
 ShowCustomInfo = true
 ShowSceneName = true
 ShowTime = true
+ShowSplits = false
 ShowTimeOnly = false
 ShowTimeMinusFixedTime = true
 ShowRng = true
+
+SplitFileLocation = ./split.lss
 
 ShowEnemyHp = true
 ShowEnemyPosition = true
@@ -74,6 +77,7 @@ DisableCameraShake = false
         public static bool ShowKnightInfo => Enabled && GetSettingValue<bool>(nameof(ShowKnightInfo)) && !ShowTimeOnly;
         public static bool ShowSceneName => Enabled && GetSettingValue<bool>(nameof(ShowSceneName)) && !ShowTimeOnly;
         public static bool ShowTime => Enabled && GetSettingValue<bool>(nameof(ShowTime));
+        public static bool ShowSplits => Enabled && GetSettingValue<bool>(nameof(ShowSplits));
         public static bool ShowTimeMinusFixedTime => Enabled && GetSettingValue<bool>(nameof(ShowTimeMinusFixedTime)) && !ShowTimeOnly;
         public static bool ShowRng => Enabled && GetSettingValue<bool>(nameof(ShowRng)) && !ShowTimeOnly;
         public static bool ShowEnemyHp => Enabled && GetSettingValue<bool>(nameof(ShowEnemyHp)) && !ShowTimeOnly;
@@ -93,6 +97,7 @@ DisableCameraShake = false
         public static bool DisableCameraShake => Enabled && GetSettingValue<bool>(nameof(DisableCameraShake));
         public static bool IsCameraZoom => CameraZoom > 0f && Math.Abs(CameraZoom - 1f) > 0.001;
         public static float StartingGameTime => GetSettingValue<float>(nameof(StartingGameTime));
+        public static string SplitFileLocation => GetSettingValue<string>(nameof(SplitFileLocation));
 
         public static string GetHitboxColorValue(HitboxInfo.HitboxType hitboxType) {
             return GetSettingValue($"{hitboxType}Hitbox", string.Empty);

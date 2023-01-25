@@ -57,7 +57,7 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
         }
 
         // 重叠房间加载后重新采集数据
-#if V1028 || V1028_KRYTHOM
+#if V1028 || V1028_KRYTHOM || V1037
         public static void AfterManualLevelStart() {
             EnemyInfo.RefreshInfo(false);
             HitboxInfo.RefreshInfo(false);
@@ -65,12 +65,16 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
 #endif
 
         private static void OnInit(GameManager gameManager) {
+            ConfigManager.OnPreRender();
+
             EnemyInfo.OnInit();
             CustomInfo.OnInit();
             HitboxInfo.OnInit();
             RngInfo.OnInit();
             DiagnosticsLogger.OnInit();
             RandomInjection.Init();
+            SplitReader.OnInit();
+            AutoSplit.OnInit(gameManager);
         }
 
         private static void OnPreRender(GameManager gameManager, StringBuilder infoBuilder) {
@@ -79,9 +83,9 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
 
             // 放第二位，先处理镜头之后 camera.WorldToScreenPoint 才能获得正确数据
             CameraManager.OnPreRender(gameManager);
-
             HeroInfo.OnPreRender(gameManager, infoBuilder);
             CustomInfo.OnPreRender(gameManager, infoBuilder);
+            AutoSplit.OnPreRender(gameManager, infoBuilder);
             TimeInfo.OnPreRender(gameManager, infoBuilder);
             EnemyInfo.OnPreRender(gameManager, infoBuilder);
             HitboxInfo.OnPreRender(gameManager, infoBuilder);

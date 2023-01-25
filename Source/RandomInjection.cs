@@ -201,7 +201,7 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
             Add(targetMethods, typeof(Walker).GetMethod("StartMoving", allFlags));
             Add(targetMethods, typeof(WeaverlingEnemyList).GetMethod("GetTarget", allFlags));
 #endif
-#if V1221 || V1028 || V1028_KRYTHOM
+#if V1221 || V1028 || V1028_KRYTHOM || V1037
             Add(targetMethods, typeof(UnityEngine.ParticleEmitter).GetMethod("Emit", allFlags, null, new Type[] { }, null));
 #endif
             Add(targetMethods, typeof(AudioSourcePitchRandomizer).GetMethod("Awake", allFlags));

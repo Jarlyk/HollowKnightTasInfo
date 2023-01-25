@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31829.152
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly-CSharp.TasInfo.mm", "Assembly-CSharp.TasInfo.mm.csproj", "{45699EED-E8CE-4B17-9B91-CB721B84D493}"
 EndProject
@@ -9,6 +9,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		v1028_Krythom|Any CPU = v1028_Krythom|Any CPU
 		v1028|Any CPU = v1028|Any CPU
+		v1037|Any CPU = v1037|Any CPU
 		v1221|Any CPU = v1221|Any CPU
 		v1432|Any CPU = v1432|Any CPU
 	EndGlobalSection
@@ -17,6 +18,8 @@ Global
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1028_Krythom|Any CPU.Build.0 = v1028_Krythom|Any CPU
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1028|Any CPU.ActiveCfg = v1028|Any CPU
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1028|Any CPU.Build.0 = v1028|Any CPU
+		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1037|Any CPU.ActiveCfg = v1037|Any CPU
+		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1037|Any CPU.Build.0 = v1037|Any CPU
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1221|Any CPU.ActiveCfg = v1221|Any CPU
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1221|Any CPU.Build.0 = v1221|Any CPU
 		{45699EED-E8CE-4B17-9B91-CB721B84D493}.v1432|Any CPU.ActiveCfg = v1432|Any CPU

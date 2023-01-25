@@ -22,7 +22,7 @@ class patch_GameManager : GameManager {
     //    orig_LeftScene(doAdditiveLoad);
     //}
 
-#if V1028 || V1028_KRYTHOM
+#if V1028 || V1028_KRYTHOM || V1037
     [MonoModIgnore]
     private extern void orig_ManualLevelStart();
     private void ManualLevelStart() {
