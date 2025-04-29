@@ -23,7 +23,7 @@ function onPaint()
         elseif line:find("^CircleHitbox=") ~= nil then
             local hitboxData = splitString(line:sub(14), "|")
             for i = 1, #hitboxData, 4 do
-                gui.ellipse(hitboxData[i], hitboxData[i + 1], hitboxData[i + 2], hitboxData[i + 2], hitboxData[i + 3])
+                gui.ellipse(hitboxData[i], hitboxData[i + 1], hitboxData[i + 2], hitboxData[i + 2], 1, hitboxData[i + 3])
             end
         else
             table.insert(gameInfo, line)
